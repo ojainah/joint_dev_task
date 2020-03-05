@@ -51,7 +51,7 @@ def q7
   array = ["1", "2", "3", "4", "5"]
 
   # 以下に回答を記載
-  p array.map(&:to_i)
+  p array.map!(&:to_i)
 end
 
 def q8
@@ -86,41 +86,41 @@ def q11
   sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]]
 
   # 以下に回答を記載
-  sports.flatten.uniq.each.with_index(1) do |sport, index|
-    puts "No#{index} #{sport}"
+    sports.flatten.uniq.each.with_index(1) do |sport, index|
+      puts "No#{index} #{sport}"
+    end
   end
-end
 
 def q12
   data = { user: { name: "satou", age: 33 } }
 
   # 以下に回答を記載
-  puts data[:user][:name]
-end
+    puts data[:user][:name]
+  end
 
   def q13
   user_data = { name: "神里", age: 31, address: "埼玉" }
   update_data = { age: 32, address: "沖縄" }
 
   # 以下に回答を記載
-  puts user_data.merge(update_data)
-end
+    puts user_data.merge(update_data)
+  end
 
   def q14
   data = { name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com" }
 
   # 以下に回答を記載
-  p data.keys
-end
+    p data.keys
+  end
 
 def q15
   data1 = { name: "saitou", hobby: "soccer", age: 33, role: "admin" }
   data2 = { name: "yamada", hobby: "baseball", role: "normal" }
 
   # 以下に回答を記載
-  puts data1.include?(:age) ? "OK" : "NG"
-  puts data2.include?(:age) ? "OK" : "NG"
-end
+    puts data1.include?(:age) ? "OK" : "NG"
+    puts data2.include?(:age) ? "OK" : "NG"
+  end
 
   def q16
   users = [

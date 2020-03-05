@@ -87,7 +87,7 @@ def q11
 
   # 以下に回答を記載
   sports.flatten.uniq.each.with_index(1) do |sport, index|
-    puts "No.#{index} #{sport}"
+    puts "No#{index} #{sport}"
   end
 end
 
@@ -98,7 +98,7 @@ def q12
   puts data[:user][:name]
 end
 
-def q13
+  def q13
   user_data = { name: "神里", age: 31, address: "埼玉" }
   update_data = { age: 32, address: "沖縄" }
 
@@ -106,7 +106,7 @@ def q13
   puts user_data.merge(update_data)
 end
 
-def q14
+  def q14
   data = { name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com" }
 
   # 以下に回答を記載
@@ -122,7 +122,7 @@ def q15
   puts data2.include?(:age) ? "OK" : "NG"
 end
 
-def q16
+  def q16
   users = [
     { name: "satou", age: 22 },
     { name: "yamada", age: 12 },

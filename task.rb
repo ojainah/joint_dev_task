@@ -103,7 +103,7 @@ def q12
   update_data = { age: 32, address: "沖縄" }
 
   # 以下に回答を記載
-    puts user_data.merge(update_data)
+    puts user_data.merge!(update_data)
   end
 
   def q14
@@ -131,12 +131,34 @@ def q15
   ]
 
   # 以下に回答を記載
-
+  users.each do |user|
+    puts "私の名前は#{user[:name]}です。年齢は#{user[:age]}歳です。"
+  end
 end
 
 class UserQ17
   # 以下に回答を記載
+  attr_accessor :name, age, gender, admin
+  class << self
+    def initialize(name, age, gender, admin)
+      @name = user[:name]
+      @age = user[:age]
+      @gender = user[:gender]
+      @admin = user[:admin]
+    end
 
+    def info
+      puts <<~TEXT
+       名前：#{@name}
+       年齢：#{@age}
+       性別：#{@gender}
+       管理者権限：#{@admin}
+      TEXT
+
+      puts user1(@admin) ? "有り" : "無し"
+      puts user2(@admin) ? "有り" : "無し"
+    end
+  end
 end
 
 def q17

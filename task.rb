@@ -138,26 +138,22 @@ end
 
 class UserQ17
   # 以下に回答を記載
-  attr_accessor :name, age, gender, admin
-  class << self
-    def initialize(name, age, gender, admin)
-      @name = user[:name]
-      @age = user[:age]
-      @gender = user[:gender]
-      @admin = user[:admin]
+    def initialize(params)
+      @name = params[:name]
+      @age = params[:age]
+      @gender = params[:gender]
+      @admin = params[:admin]
     end
 
     def info
-      puts <<~TEXT
-       名前：#{@name}
-       年齢：#{@age}
-       性別：#{@gender}
-       管理者権限：#{@admin}
-      TEXT
+        admin = @admin ? "有り" : "無し"
 
-      puts user1(@admin) ? "有り" : "無し"
-      puts user2(@admin) ? "有り" : "無し"
-    end
+    puts <<~TEXT
+    名前：#{@name}
+    年齢：#{@age}
+    性別：#{@gender}
+    管理者権限：${admin}
+    TEXT
   end
 end
 
@@ -173,7 +169,14 @@ end
 
 class UserQ18
   # 以下に回答を記載
+  def initialize(params)
+    @name = params[:name]
+    @age = params[:age]
+  end
 
+  def introduce
+    @age > 30 ? "こんにちは, #{@name}と申します。宜しくお願いいたします。" : puts "はいさいまいど〜, #{@name}です！！！"
+  end
 end
 
 def q18
